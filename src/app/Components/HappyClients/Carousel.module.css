@@ -1,0 +1,225 @@
+:root {
+  --accent-color: orange;
+  --accent-whitewashed: #ffdca8;
+  --text-color-light: white;
+}
+
+
+.slideshowContainer {
+    height: 100%;
+    max-width: 80%;
+    position: relative;
+    margin: auto;
+  }
+  
+  .slides {
+    display: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  .slidesActive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slidesInactive {
+    display: none;
+  }
+  
+  .overlay {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin-top: 0.8rem;
+  }
+  
+  .overlay * {
+    margin: auto;
+  }
+  
+  .title {
+    color: var(--text-color-light);
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 70%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text {
+    color: var(--text-color-light);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+    padding-inline: 2rem;
+    padding-bottom: 3rem;
+    max-width: 800px;
+  }
+  
+  .icon > * {
+    width: 8rem;
+    height: 8rem;
+    color: var(--text-color-light);
+    position: relative;
+    top: 10px;
+  }
+  
+  .lines {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .line {
+    background-color: var(--accent-color);
+    height: 1vw;
+    width: 20vw;
+    margin-inline: 2vw;
+  }
+  
+  .linesIcon {
+    width: 15vw;
+    height: 15vw;
+    max-width: 150px;
+    max-height: 150px;
+    color: var(--accent-color);
+  }
+  
+  @media only screen and (min-width: 550px) {
+    
+    .text {
+      font-size: 1.5rem;
+    }
+    
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .lines {
+      display: flex;
+      flex-direction: row;
+    }
+    .overlay {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media only screen and (min-width: 976px) {
+    .link {
+      font-size: 1.1rem;
+      line-height: 2.6;
+    }
+    
+    .text {
+      font-size: 1.8rem;
+    }
+  
+    .overlay {
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+  
+  }
+  
+  @media only screen and (min-width: 1440px) {
+    .link {
+      font-size: 1.3rem;
+      line-height: 2;
+    }
+
+
+
+
+  }
+  
+  .img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 56%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 4;
+  }
+  
+  .prev {
+    left: -41px;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .next {
+    right: -41px;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: var(--accent-whitewashed);
+  }  
+  
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: var(--accent-whitewashed);
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.6s ease;
+    user-select: none;
+  }
+  
+  .active, .dot:hover {
+    background-color: var(--accent-color);
+  }
+
+  .dots {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 16px;
+  }
+
+  @media only screen and (min-width: 550px) {
+    .dots {
+      margin-top: 10px;
+      
+    }
+
+    .dot {
+      height: 15px;
+      width: 15px;
+    }
+  }
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .2}
+    to {opacity: 1}
+  }
