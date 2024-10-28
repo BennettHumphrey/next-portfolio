@@ -5,6 +5,10 @@
 :root {
   --bg-light: #ffffff;
   --bg-dark: #171717;
+  --text-dark: black;
+
+
+
   --font-eudoxus-sans: 'Eudoxus Sans', sans-serif;
 }
 
