@@ -10,8 +10,8 @@ export default function Home() {
     <div className="">
       <Nav  />
       <Header  />
-      {/* <Expertise  /> */}
-    {/* <HappyCustomers  /> */}
+      <Expertise  />
+      <HappyCustomers  />
       {/* <Portfolio  /> */}
       {/* <Footer  /> */}
     </div>

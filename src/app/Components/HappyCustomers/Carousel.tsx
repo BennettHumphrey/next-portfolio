@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+"use client"
+
+import React, { useState, useEffect, FC } from "react";
+import { CarouselProps } from "./heroSlides";
 
 //Import styles from parent
 
-const Carousel = ({ data, options, styles }) => {
+const Carousel:FC<CarouselProps> = ({ data, options, styles }) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [slideCounter, setSlideCounter] = useState(0);
 
@@ -12,10 +15,10 @@ const Carousel = ({ data, options, styles }) => {
         setSlideCounter((prevSlideCounter) => {
           const newSlideCounter = prevSlideCounter + 1;
 
-          if (newSlideCounter >= options.autoplayDelay) {
+          if(options.autoplayDelay) {if (newSlideCounter >= options.autoplayDelay) {
             nextSlide();
             return 0; // Reset slide counter
-          }
+          }}
 
           return newSlideCounter;
         });
@@ -39,7 +42,7 @@ const Carousel = ({ data, options, styles }) => {
     setSlideCounter(0);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index:number) => {
     setActiveSlideIndex(index);
     setSlideCounter(0);
   };
@@ -83,7 +86,7 @@ const Carousel = ({ data, options, styles }) => {
                     />
                   ))}
                 </div>
-                <p className="shadow-sm text-black text-lg sm:text-xl md:text-2xl text-center xsm:py-5">
+                <p className="shadow-sm text-black text-lg sm:text-xl md:text-2xl text-center xsm:py-5 md:max-w-[60vw] lg:max-w-[50vw]">
                   {slide.text}
                 </p>
               </div>

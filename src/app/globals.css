@@ -6,11 +6,15 @@
   --bg-light: #ffffff;
   --bg-dark: #171717;
   --text-dark: black;
+  --accent-color: orange;
+  --accent-whitewashed: #ffdca8;
+  --text-color-light: white;
 
 
 
   --font-eudoxus-sans: 'Eudoxus Sans', sans-serif;
 }
+
 
 
 
