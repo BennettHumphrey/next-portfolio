@@ -1,7 +1,7 @@
 'use client'
 
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BiMenuAltRight } from 'react-icons/bi';
 import useOutsideAlerter from '@/app/hooks/useOutsideAlerter';
 import useHeaderShadow from '@/app/hooks/useHeaderShadow';
@@ -11,7 +11,13 @@ const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerShadow = useHeaderShadow();
   const menuRef = useRef<HTMLUListElement>(null);
+  const [windowWidth, setWindowWidth] = useState(700);
+
   const { width } = useWindowSize();
+
+  useEffect(() => {
+    setWindowWidth(width);
+  }, [width]);
 
   useOutsideAlerter({ menuRef, setMenuOpen });
 
@@ -52,7 +58,7 @@ const Nav = () => {
             e.preventDefault();
           }}
         >
-          {width <= 768 ? <BiMenuAltRight size={30} /> : null}
+          {windowWidth <= 768 ? <BiMenuAltRight size={30} /> : null}
         </div>
       </div>
     </div>

@@ -9,11 +9,13 @@
   --accent-color: orange;
   --accent-whitewashed: #ffdca8;
   --text-color-light: white;
+  overflow-x: hidden;
 
 
 
   --font-eudoxus-sans: 'Eudoxus Sans', sans-serif;
 }
+
 
 
 

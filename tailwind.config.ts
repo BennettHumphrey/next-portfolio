@@ -1,10 +1,12 @@
 import type { Config } from "tailwindcss";
+import flowbite from "flowbite-react/tailwind";
 
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    flowbite.content(),
   ],
   theme: {
     screens: {
@@ -17,12 +19,12 @@ const config: Config = {
     },
     extend: {
       colors: {
-        'bg-light': "var(--bg-light)",
-        'bg-dark': "var(--bg-dark)",
-        'text-dark': "var(--text-dark)",
+        "bg-light": "var(--bg-light)",
+        "bg-dark": "var(--bg-dark)",
+        "text-dark": "var(--text-dark)",
       },
     },
   },
-  plugins: [],
+  plugins: [flowbite.plugin()],
 };
 export default config;

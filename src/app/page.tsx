@@ -11,8 +11,8 @@ export default function Home() {
       <Nav  />
       <Header  />
       <Expertise  />
-      <HappyCustomers  />
-      {/* <Portfolio  /> */}
+      {/* <HappyCustomers  /> */}
+      <Portfolio  />
       {/* <Footer  /> */}
     </div>
   );

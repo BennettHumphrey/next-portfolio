@@ -235,7 +235,28 @@ export const projects = [
 ]
 
 
+export interface Project {
+  id: string;
+  title: string;
+  type: string;
+  tech: string;
+  githubSrc: string;
+  deployedSrc: string;
+  description: string;
+  mainscreenshotSrc: string;
+  screenshots: string[];
+  showcase: boolean;
+}
 
+// Props type for MoreWorks
+export interface MoreWorksProps {
+  extraProjects: Project[];
+  setSelectedProject: (project: Project | null) => void;
+}
+
+export interface ProjectShowcaseProps {
+  project: Project;
+}
 
 
 export const imageSizes = {
