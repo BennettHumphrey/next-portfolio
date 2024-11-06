@@ -15,7 +15,7 @@ const Header = () => {
           </span>
         </div>
 
-        <div className="w-[80vw] h-[80vw] max-h-[80vh] max-w-[80vh] rounded-[70px] m-auto md:relative relative sm:w-[60vw] sm:h-[60vw] md:w-[50vw] md:h-[50vw] md:rounded-[120px]">
+        <div className="w-[80vw] h-[75vw] max-h-[80vh] max-w-[80vh] rounded-[70px] m-auto md:relative relative sm:w-[60vw] sm:h-[55vw] md:w-[50vw] md:h-[45vw] md:rounded-[120px]">
           <img
             src="./profile.webp"
             alt="Ben"

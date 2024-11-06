@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Project, projects } from "@/app/data";
+import { Project, ProjectCategory, projects } from "@/app/data";
 import MoreWorks from "./MoreWorks";
 import ProjectShowcase from "./ProjectShowcase";
 import {
@@ -18,7 +18,7 @@ const Portfolio = () => {
   const [windowWidth, setWindowWidth] = useState(700);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [projectSet, setProjectSet] = useState<Project[] | null>(null);
+  const [projectSet, setProjectSet] = useState<ProjectCategory>(projects.electrical);
 
   const { width } = useWindowSize();
 
@@ -26,23 +26,20 @@ const Portfolio = () => {
     setWindowWidth(width);
   }, [width]);
 
-  useEffect(() => {
-    const currentSearchParams = searchParams.get('projectset');
-    if(!currentSearchParams) {
-      console.log('no search params')
-      handleProjectSetChange('electrical');
-    }
-  }, [])
+
+  type ProjectKey = keyof typeof projects;
 
   useEffect(() => {
-    const selectedProjectSet = searchParams.get('projectset');
-    // if(!selectedProjectSet) {
-    //   console.log('no search params')
-    //   handleProjectSetChange('electrical');
-    // }
-    // @ts-ignore
-    setProjectSet(projects[selectedProjectSet]);
+    const selectedProjectSet = searchParams.get('projectset') as ProjectKey | null;
+  
+    if (selectedProjectSet && selectedProjectSet in projects) {
+      setProjectSet(projects[selectedProjectSet]);
+    } else {
+      setProjectSet(projects.electrical);
+    }
   }, [searchParams]);
+  
+
 
   useEffect(() => {
     console.log('projectSet in Portfolio.tsx:', projectSet)
@@ -55,7 +52,7 @@ const Portfolio = () => {
   const customTheme: CustomFlowbiteTheme = {
     carousel: {
       control: {
-        base: "inline-flex h-8 w-8 relative -top-12 items-center justify-center rounded-full bg-[#c4c4c499] group-hover:[#c4c4c4bb] group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
+        base: "inline-flex h-8 w-8 relative -top-[80px] md:-top-[10px] items-center justify-center rounded-full bg-[#c4c4c499] group-hover:[#c4c4c4bb] group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
       },
     },
   };
@@ -72,7 +69,6 @@ const Portfolio = () => {
             <Button
               gradientDuoTone="redToYellow"
               className="duration-300 hover:scale-105 w-[90px] h-[42px] text-white"
-              // @ts-ignore
               onClick={() => handleProjectSetChange('electrical')}
             >
               Electrical
@@ -80,6 +76,7 @@ const Portfolio = () => {
             <Button
               gradientDuoTone="greenToBlue"
               className="duration-300 hover:scale-105 p-1 sm:p-3 sm:text-2xl sm:rounded-3xl"
+              onClick={() => handleProjectSetChange('clients')}
             >
               HAPPY CLIENTS
             </Button>
@@ -88,17 +85,22 @@ const Portfolio = () => {
               className="duration-300 hover:scale-105 w-[90px] h-[42px]"
               onClick={() => handleProjectSetChange('other')}
             >
-              Salons
+              Other
             </Button>
           </div>
-
+          <p className="text-center text-xl px-3 max-w-[600px] m-auto">
+            <span className="underline tracking-wider font-bold mr-2 text-2xl">
+            {projectSet.header}  
+            </span>
+            {projectSet.description}
+          </p>
           <div className="relative w-[90vw] h-full m-auto">
             <Flowbite theme={{ theme: customTheme }}>
               <Carousel pauseOnHover slideInterval={6000}>
-                {projectSet && projectSet.map((p: Project) => (
+                {projectSet && projectSet.projects.map((p: Project, i) => (
                   <div
-                    className="w-4/5 flex pb-3 flex-col md:flex-row items-center justify-center relative max-h-screen"
-                    key={p.id}
+                    className="w-4/5 flex pb-3 flex-col md:flex-row items-center justify-center relative max-h-[120vh] md:max-h-screen"
+                    key={i}
                   >
                     {windowWidth < 768 && (
                       <h3 className="text-center text-2xl font-bold tracking-wider m-auto pb-8">
@@ -112,12 +114,6 @@ const Portfolio = () => {
                       width={700}
                       height={700}
                       alt={`${p.title} screenshot`}
-                      // onClick={() => {
-                      //   setSelectedProject(p);
-                      // }}
-                      // onTouchEnd={() => {
-                      //   setSelectedProject(p);
-                      // }}
                     />
                     <div className="flex relative flex-col md:w-[40vw] md:px-[2vw] lg:px-[4vw]">
                       {windowWidth >= 768 && (
@@ -125,9 +121,9 @@ const Portfolio = () => {
                           {p.title}
                         </h3>
                       )}
-                      <div className="flex justify-between w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 *:border *:p-2 *:rounded-lg *:border-gray-800 text-orange-400 text-sm">
-                        <a href={p.githubSrc}>Github Repo</a>
-                        <a href={p.deployedSrc}>Deployed Site</a>
+                      <div className="flex justify-center gap-2 w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 *:border *:p-2 *:rounded-lg *:border-gray-800 text-orange-400 text-sm">
+                        <a href={p.githubSrc} target="_blank">Github Repo</a>
+                        {p.deployedSrc && <a href={p.deployedSrc} target="_blank">Deployed Site</a>}
                       </div>
                       <p className="first-letter:uppercase px-2 text-lg tracking-wide">
                         {p.description}
