@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { Project, ProjectCategory, projects } from "@/app/data";
-import MoreWorks from "./MoreWorks";
-import ProjectShowcase from "./ProjectShowcase";
 import {
   Button,
   Carousel,
@@ -108,7 +106,7 @@ const Portfolio = () => {
                       </h3>
                     )}
                     <Image
-                      className="rounded-2xl relative shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-200 md:w-[40vw]"
+                      className="rounded-2xl relative shadow-lg duration-200 md:w-[40vw] max-h-[70vh]"
                       src={p.mainscreenshotSrc}
                       priority
                       width={700}
@@ -122,7 +120,7 @@ const Portfolio = () => {
                         </h3>
                       )}
                       <div className="flex justify-center gap-2 w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 *:border *:p-2 *:rounded-lg *:border-gray-800 text-orange-400 text-sm">
-                        <a href={p.githubSrc} target="_blank">Github Repo</a>
+                        {p.githubSrc &&  <a href={p.githubSrc} target="_blank">Github Repo</a>}
                         {p.deployedSrc && <a href={p.deployedSrc} target="_blank">Deployed Site</a>}
                       </div>
                       <p className="first-letter:uppercase px-2 text-lg tracking-wide">

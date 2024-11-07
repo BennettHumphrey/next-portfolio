@@ -1,7 +1,6 @@
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { MdWorkspacesOutline } from "react-icons/md";
 import { BiMobileAlt } from "react-icons/bi";
-import { srcsets } from "../../public/srcsets";
 
 export const projectExperience = [
   {
@@ -55,13 +54,12 @@ export const skills = [
   },
 ];
 
-// TODO:
-// Clean data, add new sites
 
 export const projects = {
   electrical: {
     header: "ELECTRICAL TEMPLATES",
-    description: " were some of my first projects, because I worked as an electrician for a few years",
+    description:
+      " were some of my first projects, because I worked as an electrician for a few years",
     projects: [
       {
         title: "First Electrical Template",
@@ -102,13 +100,28 @@ export const projects = {
     description: " that were happy with the work I did for them",
     projects: [
       {
-        title: "",
+        title: "Andersen Electric",
         githubSrc: "",
-        deployedSrc: "",
-        description: "",
-        mainscreenshotSrc: "",
+        deployedSrc: "https://andersenelectric.com/",
+        description:
+          '"You were patient, persistent and concise, and respected my time! Thanks so much, I will recommend you to anyone I know who needs a site!" -Dave',
+        mainscreenshotSrc: "/clients/andersen.webp",
       },
-    ]
+      {
+        title: "Power On Electric",
+        githubSrc: "",
+        deployedSrc: "https://poweronelectrical.net/",
+        description: 'A clean, effective landing page for a growing company—one of my first freelance projects. "Quick and very affordable, thanks so much!" -Yared',
+        mainscreenshotSrc: "/clients/power-on.webp",
+      },
+      {
+        title: "Pioneer Electric",
+        githubSrc: "",
+        deployedSrc: "https://www.pioneerelectrical.net/",
+        description: "A landing page designed for an electrical company, highlighting numerous customer reviews and detailed company information to build trust and credibility.",
+        mainscreenshotSrc: "/clients/pioneer.webp",
+      },
+    ],
   },
   other: {
     header: "OTHER PROJECTS",
@@ -118,8 +131,9 @@ export const projects = {
         title: "Salon Belleza",
         githubSrc: "https://github.com/BennettHumphrey/Salon-Belleza",
         deployedSrc: "https://salon-belleza-rose.vercel.app/",
-        description: "Inspired by my wife's cosmetic dermatology studies, I created a salon portfolio site with Next.js, enjoying its additional conveniences over regular React.",
-        mainscreenshotSrc: "",
+        description:
+          "Inspired by my wife's cosmetic dermatology studies, I created a salon portfolio site with Next.js, enjoying its additional conveniences over regular React.",
+        mainscreenshotSrc: "/other/salon.webp",
       },
       {
         title: "Blue Fin Sushi",
@@ -141,7 +155,8 @@ export const projects = {
         title: "Flashcard Site (Ongoing)",
         githubSrc: "https://github.com/BennettHumphrey/language-learning-site",
         deployedSrc: "https://language-learning-site.vercel.app/",
-        description: "Ongoing full-stack flashcard app made with Next.js, featuring auto-generated quizzes, exercises, and timed repetition. Still a work in progress, so deployment may occasionally break.",
+        description:
+          "Ongoing full-stack flashcard app made with Next.js, featuring auto-generated quizzes, exercises, and timed repetition. Still a work in progress, so deployment may occasionally break.",
         mainscreenshotSrc: "/other/lang.webp",
       },
     ],
@@ -155,7 +170,6 @@ export const projects = {
 //   description: "",
 //   mainscreenshotSrc: "",
 // },
-
 
 export interface Project {
   title: string;
