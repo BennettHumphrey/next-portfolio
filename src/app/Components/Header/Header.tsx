@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
           <span className="text-4xl text-center font-bold text-text-dark md:text-start">
             Hello,
             <br />
-            I'm Ben
+            I&apos;m Ben
           </span>
           <span className="text-2xl text-gray-600 pt-8 pb-12 sm:pt-12">
             Let me help you <br /> build your brand!
@@ -16,19 +17,24 @@ const Header = () => {
         </div>
 
         <div className="w-[80vw] h-[75vw] max-h-[80vh] max-w-[80vh] rounded-[70px] m-auto md:relative relative sm:w-[60vw] sm:h-[55vw] md:w-[50vw] md:h-[45vw] md:rounded-[120px]">
-          <img
-            src="./profile.webp"
+          <Image
+            src="/profile.webp"
             alt="Ben"
+            width={376}
+            height={420}
             className="z-10 absolute rounded-[100px] overflow-hidden inset-0 w-[90%] m-auto h-full object-center"
           />
-          <img
-            src="./splash.png"
+          <Image
+            src="/splash.webp"
+            alt=""
+            width={426}
+            height={439}
             className="absolute rounded-[100px] overflow-hidden inset-0 w-[90%] m-auto h-full object-center"
           />
         </div>
 
         <div className="flex flex-col gap-4 items-center justify-center md:items-start mt-12">
-          <p> Let's build<br/>something together!</p>
+          <p> Let&apos;s build<br/>something together!</p>
           <a
             className=" inline relative text-orange-500"
             href="mailto:bennetthumphrey98@gmail.com"

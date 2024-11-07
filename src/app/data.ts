@@ -185,12 +185,3 @@ export interface ProjectCategory {
   projects: Project[];
 }
 
-// Props type for MoreWorks
-export interface MoreWorksProps {
-  extraProjects: Project[];
-  setSelectedProject: (project: Project | null) => void;
-}
-
-export interface ProjectShowcaseProps {
-  project: Project;
-}

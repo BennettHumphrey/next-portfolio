@@ -16,7 +16,7 @@ const Portfolio = () => {
   const [windowWidth, setWindowWidth] = useState(700);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [projectSet, setProjectSet] = useState<ProjectCategory>(projects.electrical);
+  const [projectSet, setProjectSet] = useState<ProjectCategory>(projects.clients);
 
   const { width } = useWindowSize();
 
@@ -33,7 +33,7 @@ const Portfolio = () => {
     if (selectedProjectSet && selectedProjectSet in projects) {
       setProjectSet(projects[selectedProjectSet]);
     } else {
-      setProjectSet(projects.electrical);
+      setProjectSet(projects.clients);
     }
   }, [searchParams]);
   
@@ -134,8 +134,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      {/* {showMoreWorks && <MoreWorks extraProjects={extraProjects} setSelectedProject={setSelectedProject} />} */}
-      {/* {selectedProject && <ProjectShowcase project={selectedProject} />} */}
     </>
   );
 };

@@ -8,10 +8,10 @@ const Footer = () => {
         
         {/* Left Section */}
         <div className="flex-3 text-center sm:text-left">
-          <span className="text-4xl font-bold block">Let's make something<br />great together!</span>
+          <span className="text-4xl font-bold block">Let&apos;s make something<br />great together!</span>
           <span className="text-4xl font-bold block mt-12">
             Start by
-            <a href="mailto:bennetthumphrey98@gmail.com" className="text-orange-500 underline ml-1">saying hi</a>
+            <a href="mailto:bennetthumphrey98@gmail.com" className="text-orange-400 underline ml-1">saying hi</a>
           </span>
         </div>
         

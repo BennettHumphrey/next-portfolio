@@ -40,11 +40,6 @@ const Nav = () => {
             </a>
           </li>
           <li>
-            <a href="#happy" className="hover:text-blue-500">
-              Experience
-            </a>
-          </li>
-          <li>
             <a href="#portfolio" className="hover:text-blue-500">
               Portfolio
             </a>
