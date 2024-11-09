@@ -41,7 +41,7 @@ const Nav = () => {
           </li>
           <li>
             <a href="#portfolio" className="hover:text-blue-500">
-              Portfolio
+              Projects
             </a>
           </li>
         </ul>

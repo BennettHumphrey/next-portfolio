@@ -8,7 +8,6 @@ import {
   CustomFlowbiteTheme,
   Flowbite,
 } from "flowbite-react";
-import Image from "next/image";
 import { useWindowSize } from "react-use";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -39,9 +38,9 @@ const Portfolio = () => {
   
 
 
-  useEffect(() => {
-    console.log('projectSet in Portfolio.tsx:', projectSet)
-  }, [projectSet])
+  // useEffect(() => {
+  //   console.log('projectSet in Portfolio.tsx:', projectSet)
+  // }, [projectSet])
 
   const handleProjectSetChange = (selectedProjectSet: string) => {
     router.replace(`/?projectset=${selectedProjectSet}`, { scroll: false });
@@ -105,10 +104,9 @@ const Portfolio = () => {
                         {p.title}
                       </h3>
                     )}
-                    <Image
+                    <img
                       className="rounded-2xl relative shadow-lg duration-200 md:w-[40vw] max-h-[70vh]"
                       src={p.mainscreenshotSrc}
-                      priority
                       width={700}
                       height={700}
                       alt={`${p.title} screenshot`}
@@ -119,9 +117,9 @@ const Portfolio = () => {
                           {p.title}
                         </h3>
                       )}
-                      <div className="flex justify-center gap-2 w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 *:border *:p-2 *:rounded-lg *:border-gray-800 text-orange-400 text-sm">
-                        {p.githubSrc &&  <a href={p.githubSrc} target="_blank">Github Repo</a>}
-                        {p.deployedSrc && <a href={p.deployedSrc} target="_blank">Deployed Site</a>}
+                      <div className="flex justify-center gap-2 w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 text-sm">
+                        {p.githubSrc &&  <a href={p.githubSrc} target="_blank"><Button outline gradientDuoTone="redToYellow">Github Repo</Button></a>}
+                        {p.deployedSrc && <a href={p.deployedSrc} target="_blank"><Button outline gradientDuoTone="redToYellow">Deployed Site</Button></a>}
                       </div>
                       <p className="first-letter:uppercase px-2 text-lg tracking-wide">
                         {p.description}

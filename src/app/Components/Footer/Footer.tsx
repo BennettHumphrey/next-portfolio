@@ -3,15 +3,15 @@ import { BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <section className="bg-white px-6 py-6 sm:px-16 sm:py-16">
+    <section className="bg-gradient-to-b from-white to-gray-700 px-6 py-6 sm:px-16 sm:py-16">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-8 items-center sm:items-start">
         
         {/* Left Section */}
         <div className="flex-3 text-center sm:text-left">
           <span className="text-4xl font-bold block">Let&apos;s make something<br />great together!</span>
-          <span className="text-4xl font-bold block mt-12">
+          <span className="text-4xl font-bold text-white block mt-12">
             Start by
-            <a href="mailto:bennetthumphrey98@gmail.com" className="text-orange-400 underline ml-1">saying hi</a>
+            <a href="mailto:bennetthumphrey98@gmail.com" className="text-orange-400 underline ml-1">saying hi!</a>
           </span>
         </div>
         
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className='pt-8'>
             <a 
               href="mailto:bennetthumphrey98@gmail.com"
-              className="text-lg cursor-pointer hover:text-gray-600"
+              className="text-lg cursor-pointer text-white sm:text-black hover:text-orange-400"
             >
               <span className='underline'>Email:</span><br/> bennetthumphrey98@gmail.com
             </a>
@@ -29,10 +29,10 @@ const Footer = () => {
             <a 
               href="https://www.instagram.com/bennett.humphrey/" 
               target="_blank" 
-              className="flex items-center cursor-pointer hover:text-orange-500"
+              className="flex items-center text-white sm:text-black cursor-pointer hover:text-orange-400"
               rel="noopener noreferrer"
             >
-              <BsInstagram className="mr-1 transform translate-y-1" />
+              <BsInstagram className="mr-1 transform" />
               Instagram
             </a>
           </div>

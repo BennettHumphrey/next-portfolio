@@ -1,9 +1,8 @@
-import Image from "next/image";
 import React from "react";
 
 const Header = () => {
   return (
-    <section className="p-6 py-12 overflow-hidden max-h-[90vh]">
+    <section className="p-6 py-12 overflow-hidden md:max-h-[90vh]">
       <div className="flex flex-col mx-auto relative w-full md:flex-row md:justify-around md:px-[10vw]">
         <div className="flex flex-col items-center justify-between sm:justify-around sm:flex-row md:flex-col md:justify-around">
           <span className="text-4xl text-center font-bold text-text-dark md:text-start">
@@ -17,14 +16,14 @@ const Header = () => {
         </div>
 
         <div className="w-[80vw] h-[75vw] max-h-[80vh] max-w-[80vh] rounded-[70px] m-auto md:relative relative sm:w-[60vw] sm:h-[55vw] md:w-[50vw] md:h-[45vw] md:rounded-[120px]">
-          <Image
+          <img
             src="/profile.webp"
             alt="Ben"
             width={376}
             height={420}
             className="z-10 absolute rounded-[100px] overflow-hidden inset-0 w-[90%] m-auto h-full object-center"
           />
-          <Image
+          <img
             src="/splash.webp"
             alt=""
             width={426}

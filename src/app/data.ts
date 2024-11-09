@@ -149,7 +149,7 @@ export const projects = {
         deployedSrc: "",
         description:
           "My first React Native project, where I built Uber and Deliveroo apps separately, then combined them. It was also my first time using TailwindCSS, which was a great change.",
-        mainscreenshotSrc: "/uber-deliveroo-clone/MainScreenshot.webp",
+        mainscreenshotSrc: "/other/uber.webp",
       },
       {
         title: "Flashcard Site (Ongoing)",
