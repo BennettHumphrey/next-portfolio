@@ -33,9 +33,9 @@ const Header = () => {
         </div>
 
         <div className="flex flex-col gap-4 items-center justify-center md:items-start mt-12">
-          <p> Let&apos;s build<br/>something together!</p>
+          <p className="text-xl"> Let&apos;s build<br/>something together!</p>
           <a
-            className=" inline relative text-orange-500"
+            className="text-lg underline underline-offset-2 inline relative text-orange-600"
             href="mailto:bennetthumphrey98@gmail.com"
           >
             bennetthumphrey98<br/>@gmail.com

@@ -15,7 +15,9 @@ const Portfolio = () => {
   const [windowWidth, setWindowWidth] = useState(700);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [projectSet, setProjectSet] = useState<ProjectCategory>(projects.clients);
+  const [projectSet, setProjectSet] = useState<ProjectCategory>(
+    projects.clients
+  );
 
   const { width } = useWindowSize();
 
@@ -23,20 +25,19 @@ const Portfolio = () => {
     setWindowWidth(width);
   }, [width]);
 
-
   type ProjectKey = keyof typeof projects;
 
   useEffect(() => {
-    const selectedProjectSet = searchParams.get('projectset') as ProjectKey | null;
-  
+    const selectedProjectSet = searchParams.get(
+      "projectset"
+    ) as ProjectKey | null;
+
     if (selectedProjectSet && selectedProjectSet in projects) {
       setProjectSet(projects[selectedProjectSet]);
     } else {
       setProjectSet(projects.clients);
     }
   }, [searchParams]);
-  
-
 
   // useEffect(() => {
   //   console.log('projectSet in Portfolio.tsx:', projectSet)
@@ -57,7 +58,7 @@ const Portfolio = () => {
   return (
     <>
       <section className="bg-white pb-52 overflow-hidden py-6 md:py-8 lg:py-12 px-4 sm:px-6">
-        <a className="block relative top-[-80px] invisible" id="portfolio"/>
+        <a className="block relative top-[-80px] invisible" id="portfolio" />
         <div className="max-w-screen-xl mx-auto flex flex-col gap-8">
           <h3 className="text-center text-3xl font-bold tracking-wider underline">
             Projects
@@ -66,67 +67,82 @@ const Portfolio = () => {
             <Button
               gradientDuoTone="redToYellow"
               className="duration-300 hover:scale-105 w-[90px] h-[42px] text-white"
-              onClick={() => handleProjectSetChange('electrical')}
+              onClick={() => handleProjectSetChange("electrical")}
             >
               Electrical
             </Button>
             <Button
               gradientDuoTone="greenToBlue"
               className="duration-300 hover:scale-105 p-1 sm:p-3 sm:text-2xl sm:rounded-3xl"
-              onClick={() => handleProjectSetChange('clients')}
+              onClick={() => handleProjectSetChange("clients")}
             >
               HAPPY CLIENTS
             </Button>
             <Button
               gradientDuoTone="pinkToOrange"
               className="duration-300 hover:scale-105 w-[90px] h-[42px]"
-              onClick={() => handleProjectSetChange('other')}
+              onClick={() => handleProjectSetChange("other")}
             >
               Other
             </Button>
           </div>
           <p className="text-center text-xl px-3 max-w-[600px] m-auto">
             <span className="underline tracking-wider font-bold mr-2 text-2xl">
-            {projectSet.header}  
+              {projectSet.header}
             </span>
             {projectSet.description}
           </p>
           <div className="relative w-[90vw] h-full m-auto">
             <Flowbite theme={{ theme: customTheme }}>
               <Carousel pauseOnHover slideInterval={6000}>
-                {projectSet && projectSet.projects.map((p: Project, i) => (
-                  <div
-                    className="w-4/5 flex pb-3 flex-col md:flex-row items-center justify-center relative max-h-[120vh] md:max-h-screen"
-                    key={i}
-                  >
-                    {windowWidth < 768 && (
-                      <h3 className="text-center text-2xl font-bold tracking-wider m-auto pb-8">
-                        {p.title}
-                      </h3>
-                    )}
-                    <img
-                      className="rounded-2xl relative shadow-lg duration-200 md:w-[40vw] max-h-[70vh]"
-                      src={p.mainscreenshotSrc}
-                      width={700}
-                      height={700}
-                      alt={`${p.title} screenshot`}
-                    />
-                    <div className="flex relative flex-col md:w-[40vw] md:px-[2vw] lg:px-[4vw]">
-                      {windowWidth >= 768 && (
+                {projectSet &&
+                  projectSet.projects.map((p: Project, i) => (
+                    <div
+                      className="w-4/5 flex pb-3 flex-col md:flex-row items-center justify-center relative"
+                      key={i}
+                    >
+                      {windowWidth < 768 && (
                         <h3 className="text-center text-2xl font-bold tracking-wider m-auto pb-8">
                           {p.title}
                         </h3>
                       )}
-                      <div className="flex justify-center gap-2 w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 text-sm">
-                        {p.githubSrc &&  <a href={p.githubSrc} target="_blank"><Button outline gradientDuoTone="redToYellow">Github Repo</Button></a>}
-                        {p.deployedSrc && <a href={p.deployedSrc} target="_blank"><Button outline gradientDuoTone="redToYellow">Deployed Site</Button></a>}
+                      <div className=" relative shadow-lg duration-200 aspect-[8/7] md:w-[40vw]">
+                        <img
+                          className="overflow-hidden rounded-2xl"
+                          src={p.mainscreenshotSrc}
+                          width={700}
+                          height={700}
+                          alt={`${p.title} screenshot`}
+                        />
                       </div>
-                      <p className="first-letter:uppercase px-2 text-lg tracking-wide">
-                        {p.description}
-                      </p>
+                      <div className="flex relative flex-col md:w-[40vw] md:px-[2vw] lg:px-[4vw]">
+                        {windowWidth >= 768 && (
+                          <h3 className="text-center text-2xl font-bold tracking-wider m-auto pb-8">
+                            {p.title}
+                          </h3>
+                        )}
+                        <div className="flex justify-center gap-2 w-full px-1 sm:px-[10vw] md:px-1 md:order-1 mt-4 mb-6 text-sm">
+                          {p.githubSrc && (
+                            <a href={p.githubSrc} target="_blank">
+                              <Button outline gradientDuoTone="redToYellow">
+                                Github Repo
+                              </Button>
+                            </a>
+                          )}
+                          {p.deployedSrc && (
+                            <a href={p.deployedSrc} target="_blank">
+                              <Button outline gradientDuoTone="redToYellow">
+                                Deployed Site
+                              </Button>
+                            </a>
+                          )}
+                        </div>
+                        <p className="first-letter:uppercase px-2 text-lg tracking-wide">
+                          {p.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </Carousel>
             </Flowbite>
           </div>

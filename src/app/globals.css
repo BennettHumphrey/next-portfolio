@@ -10,6 +10,7 @@
   --accent-whitewashed: #ffdca8;
   --text-color-light: white;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
 
 
