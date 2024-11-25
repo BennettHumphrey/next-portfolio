@@ -36,6 +36,7 @@ const eudoxusSans = localFont({
     },
   ],
   variable: "--font-eudoxus-sans",
+  display: "swap"
 });
 
 

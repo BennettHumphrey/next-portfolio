@@ -20,6 +20,7 @@ const config: Config = {
     extend: {
       colors: {
         "bg-light": "var(--bg-light)",
+        "bg-light-secondary": "var(--bg-light-secondary)",
         "bg-dark": "var(--bg-dark)",
         "text-dark": "var(--text-dark)",
       },

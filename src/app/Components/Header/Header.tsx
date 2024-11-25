@@ -15,8 +15,15 @@ const Header = () => {
             <br />
             I&apos;m Ben
           </span>
-          <span className="text-2xl text-gray-600 pt-8 pb-12 sm:pt-12">
-            Let me help you <br /> build your brand!
+          <span className="text-xl text-gray-600 pt-8 pb-12 sm:pt-12 w-[200px]">
+          Canadian web developer living in Peru, married, mountain lover, and rock climber. Fluent in Spanish.
+
+
+
+
+
+
+
           </span>
         </div>
 

@@ -110,8 +110,9 @@ const Portfolio = () => {
                         <img
                           className="overflow-hidden rounded-2xl"
                           src={p.mainscreenshotSrc}
-                          width={700}
+                          width={800}
                           height={700}
+                          loading="lazy"
                           alt={`${p.title} screenshot`}
                         />
                       </div>
