@@ -57,7 +57,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <section className="bg-white pb-52 overflow-hidden py-6 md:py-8 lg:py-12 px-4 sm:px-6">
+      <section className="bg-bg-light-secondary overflow-hidden py-6 md:py-8 lg:py-12 px-4 sm:px-6">
         <a className="block relative top-[-80px] invisible" id="portfolio" />
         <div className="max-w-screen-xl mx-auto flex flex-col gap-8">
           <h3 className="text-center text-3xl font-bold tracking-wider underline">

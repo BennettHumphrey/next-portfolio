@@ -37,13 +37,13 @@ const Footer = () => {
         </motion.a>
       <div className="flex justify-center items-center gap-10 pt-8">
         <a href="https://www.instagram.com/bennett.humphrey/" target="_blank"
-        className="group">
+        className="group" aria-label="Instagram Link">
           <div className="w-10 h-10 group-hover:scale-110 duration-300">
             <InstagramIcon  />
           </div>
         </a>
         <a href="https://github.com/BennettHumphrey" target="_blank"
-        className="group">
+        className="group" aria-label="Github Link">
           <div className="w-[44px] h-[44px] bg-slate-800 rounded-full flex justify-center items-center group-hover:scale-110 duration-300">
             <GithubIcon  />
           </div>

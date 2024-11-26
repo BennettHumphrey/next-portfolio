@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
 
 const eudoxusSans = localFont({
   src: [
@@ -53,6 +54,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          href="/profile.webp"
+        />
+      </Head>
       <body
         className={`${eudoxusSans.variable} antialiased`}
       >

@@ -4,6 +4,7 @@ import Expertise from "./Components/Expertise/Expertise";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import { Suspense } from "react";
 import Footer from "./Components/Footer/Footer";
+import Performance from "./Components/Performance/Performance";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Portfolio />
       </Suspense>
+      <Performance  />
       <Footer  />
     </div>
   );
