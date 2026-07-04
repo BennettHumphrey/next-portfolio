@@ -10,7 +10,7 @@ const Expertise = () => {
           {projectExperience.map((exp, i) => (
             <div
               key={i}
-              className="flex items-center border border-gray-200 rounded-lg p-6 gap-8 transition-all duration-200 hover:shadow-md"
+              className="flex flex-col md:flex-row text-center md:text-start items-center border border-gray-200 rounded-lg p-6 gap-8 transition-all duration-200 hover:shadow-md"
             >
               <div
                 style={{ background: exp.bg }}
@@ -20,7 +20,7 @@ const Expertise = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <span className="text-xl font-bold">{exp.name}</span>
-                <span className="text-secondaryText text-lg">{exp.projects} Projects</span>
+                <span className="text-secondaryText text-lg">{exp.description}</span>
               </div>
             </div>
           ))}
@@ -35,7 +35,7 @@ const Expertise = () => {
           <div className="flex justify-center md:justify-start gap-16">
             <div className="flex flex-col items-center md:items-start">
               <span className="text-primaryText text-3xl font-bold">40+</span>
-              <span className="text-secondaryText text-lg">Projects completed</span>
+              <span className="text-secondaryText text-lg">Projects built</span>
             </div>
             {/* Uncomment if needed */}
             {/* <div className="flex flex-col items-center md:items-start">

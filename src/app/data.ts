@@ -4,27 +4,27 @@ import { BiMobileAlt } from "react-icons/bi";
 
 export const projectExperience = [
   {
-    name: "HTML & CSS Websites",
-    projects: 11,
+    name: "Landing Pages",
+    description: "For simple services or new offers",
     icon: HiOutlineDesktopComputer,
     bg: "#286F6C",
   },
   {
-    name: "React Websites",
-    projects: 17,
+    name: "Hosting & Care Plans",
+    description: "Hosting, updates, and small edits",
     icon: MdWorkspacesOutline,
     bg: "#EEC048",
   },
   {
-    name: "React Native Apps",
-    projects: 3,
+    name: "Website Modernization",
+    description: "Improve outdated sites for speed, mobile, and trust.",
     icon: BiMobileAlt,
     bg: "#F26440",
   },
 ];
 
 export const WhatDoIDo = [
-  "I love helping new, developing businesses by building websites or apps to help reach a wider audience. This makes it easier for customers to interact with their favorite companies.",
+  "I help local businesses turn missing or outdated websites into clear, fast, mobile-friendly sites that make it easy for customers to understand what they offer and get in touch. I focus on practical websites for trades, contractors, home services, and other small local businesses.",
 ];
 
 export const skills = [
@@ -96,8 +96,8 @@ export const projects = {
     ],
   },
   clients: {
-    header: "PREVIOUS CLIENTS",
-    description: " that were happy with the work I did for them",
+    header: "Client Work",
+    description: "Real websites and landing pages built for small businesses",
     projects: [
       {
         title: "Andersen Electric",

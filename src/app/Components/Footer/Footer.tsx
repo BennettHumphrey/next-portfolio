@@ -10,11 +10,10 @@ import GithubIcon from "./GithubIcon";
 const Footer = () => {
   return (
     <div className="bg-bg-light-secondary w-full flex flex-col md:flex-row items-center justify-center md:items-start px-6 pt-10 pb-5">
-      <h4 className="text-8xl opacity-80 font-black md:text-[8rem] md:w-[300px]">Shall we?</h4>
+      <h4 className="text-5xl text-center md:text-start opacity-80 font-black md:text-[5rem] md:w-[300px]">Need a better website?</h4>
       <div className="flex flex-col items-center justify-center pb-12">
         <p className="text-lg leading-[1.8] pb-8 pt-2 max-w-[700px] md:w-1/2 text-center md:text-start">
-          I work with small businesses to create optimized websites that drive
-          growth and enhance user experiences. Want to work together?
+          Send me your current site or tell me what you need built. I’ll take a look and suggest the simplest next step.
         </p>
         <motion.a 
           initial={{ scale: 1 }}
@@ -30,8 +29,8 @@ const Footer = () => {
             <div className="w-7 h-7 pr-3 flex justify-center items-center">
               <EmailIcon />
             </div>
-            <p className="flex justify-center items-center text-lg tracking-wider">
-              Email me!
+            <p className="flex justify-center items-center sm:text-lg tracking-wider">
+              Get a free site review
             </p>
           </Button>
         </motion.a>

@@ -75,24 +75,11 @@ const Nav = () => {
           <div className="flex justify-around basis-2/3">
             <div className="flex gap-5 items-center">
               <div>
-                <p className="text-xl">Interested?</p>
+                <a href="mailto:bennetthumphrey98@gmail.com" className="text-orange-600 text-bold text-xl">Ask me about a project</a>
               </div>
-              <motion.div
-                initial={{ scale: 1 }}
-                animate={{ scale: 1.13 }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 1.2,
-                }}
-                className="text-2xl text-orange-600 tracking-wide group cursor-pointer"
-              >
-                <a href="mailto:bennetthumphrey98@gmail.com">Email me!</a>
-                <div className="h-px bg-orange-600 w-0 group-hover:w-full duration-500" />
-              </motion.div>
             </div>
                     
-                    <div className="flex list-none gap-10">
+                    <ul className="flex list-none gap-10">
             <li className="group">
               <a href="#expertise" className="hover:text-orange-600">
                 Services
@@ -105,7 +92,7 @@ const Nav = () => {
               </a>
               <div className="h-px bg-orange-600 w-0 group-hover:w-full duration-500" />
             </li>
-                    </div>
+                    </ul>
           </div>
         )}
       </div>

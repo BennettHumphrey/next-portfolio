@@ -52,6 +52,14 @@ const Portfolio = () => {
       control: {
         base: "inline-flex h-8 w-8 relative -top-[80px] md:-top-[10px] items-center justify-center rounded-full bg-[#c4c4c499] group-hover:[#c4c4c4bb] group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
       },
+      indicators: {
+        wrapper: "absolute md:bottom-[-24px] left-1/2 flex -translate-x-1/2 space-x-3",
+        base: "h-3 w-3 rounded-full",
+        active: {
+          on: "bg-white",
+          off: "bg-white/50 hover:bg-white",
+        },
+      },
     },
   };
 
@@ -76,7 +84,7 @@ const Portfolio = () => {
               className="duration-300 hover:scale-105 p-1 sm:p-3 sm:text-2xl sm:rounded-3xl"
               onClick={() => handleProjectSetChange("clients")}
             >
-              HAPPY CLIENTS
+              CLIENT WORK
             </Button>
             <Button
               gradientDuoTone="pinkToOrange"
@@ -106,7 +114,7 @@ const Portfolio = () => {
                           {p.title}
                         </h3>
                       )}
-                      <div className=" relative shadow-lg duration-200 aspect-[8/7] md:w-[40vw]">
+                      <div className=" relative shadow-lg duration-200 aspect-[8/7] rounded-2xl md:w-[40vw]">
                         <img
                           className="overflow-hidden rounded-2xl"
                           src={p.mainscreenshotSrc}
@@ -138,7 +146,7 @@ const Portfolio = () => {
                             </a>
                           )}
                         </div>
-                        <p className="first-letter:uppercase px-2 text-lg tracking-wide">
+                        <p className="first-letter:uppercase px-2 text-center text-lg tracking-wide">
                           {p.description}
                         </p>
                       </div>

@@ -11,20 +11,12 @@ const Header = () => {
       <div className="flex flex-col mx-auto relative w-full md:flex-row md:justify-around md:px-[10vw]">
         <div className="flex flex-col items-center justify-between sm:justify-around sm:flex-row md:flex-col md:justify-around">
           <span className="text-4xl text-center font-bold text-text-dark md:text-start">
-            Hello,
+            Websites
             <br />
-            I&apos;m Ben
+            For Trades
           </span>
           <span className="text-xl text-gray-600 pt-8 pb-12 sm:pt-12 w-[200px]">
-          Canadian web developer living in Peru, married, mountain lover, and rock climber. Fluent in Spanish.
-
-
-
-
-
-
-
-          </span>
+          I build fast, professional websites that help small businesses look credible, explain their services clearly, and turn visitors into calls or quote requests.</span>
         </div>
 
         <div className="w-[70vw] h-[70vw] max-h-[70vw] max-w-[80vh] rounded-[40px] md:rounded-[70px] m-auto relative sm:w-[60vw] sm:h-[60vw] md:w-[50vw] md:h-[50vw] lg:w-[35vw] lg:h-[35vw]">
@@ -71,8 +63,8 @@ const Header = () => {
               </div>
             </div>
             <div className="flex flex-col items-center mx-auto">
-              <h3 className="text-xl font-semibold">Current rate</h3>
-              <span>$32CAD / $25USD per hour</span>
+              <h3 className="text-xl font-semibold">Project-based pricing</h3>
+              <span>Clear quote before work starts</span>
             </div>
           </div>
         </div>
